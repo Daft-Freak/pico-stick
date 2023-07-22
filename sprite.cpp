@@ -194,7 +194,7 @@ __always_inline static void apply_blend_patch_555(const Sprite::BlendPatch& patc
                       [sprite_pixel_ptr] "+l" (sprite_pixel_ptr32) :
                       [alpha_mask] "l" (alpha_mask),
                       [blend_mask] "l" (blend_mask),
-                      [sprite_end_ptr] "r" (sprite_end_ptr32) :
+                      [sprite_end_ptr] "h" (sprite_end_ptr32) :
                       "r1",  // sprite_pixel
                       "r2",  // frame_pixel
                       "r0", "r3", "cc" );
@@ -233,7 +233,7 @@ __always_inline static void apply_blend_patch_555(const Sprite::BlendPatch& patc
                       [sprite_pixel_ptr] "+l" (sprite_pixel_ptr32) :
                       [alpha_mask] "l" (alpha_mask),
                       [blend_mask] "l" (blend_mask),
-                      [sprite_end_ptr] "r" (sprite_end_ptr32) :
+                      [sprite_end_ptr] "h" (sprite_end_ptr32) :
                       "r1",  // sprite_pixel
                       "r2",  // frame_pixel
                       "r0", "r3", "cc" );
