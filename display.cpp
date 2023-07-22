@@ -29,9 +29,9 @@ using namespace pico_stick;
 static pico_stick::FrameTableEntry __attribute__((section(".usb_ram.frame_table"))) the_frame_table[MAX_FRAME_HEIGHT];
 
 DisplayDriver::DisplayDriver(PIO pio)
-    : frame_data(ram)
+    : ram(PIN_RAM_CS, PIN_RAM_D0)
+    , frame_data(ram)
     , current_res(RESOLUTION_720x480)
-    , ram(PIN_RAM_CS, PIN_RAM_D0)
     , dvi0{
         .timing{&dvi_timing_720x480p_60hz},
         .ser_cfg{

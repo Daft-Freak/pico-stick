@@ -94,10 +94,11 @@ private:
     void clear_patches();
     void update_sprites();
 
+    pimoroni::APS6404 ram;
+
     FrameDecode frame_data;
     pico_stick::Resolution current_res;
 
-    pimoroni::APS6404 ram;
     struct dvi_inst dvi0;
     struct semaphore dvi_start_sem;
 
